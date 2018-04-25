@@ -1,6 +1,6 @@
-package org.spring.springboot.service;
+package edu.hfut.wangyu.service;
 
-import org.spring.springboot.domain.City;
+import edu.hfut.wangyu.dal.City;
 
 /**
  * 城市业务逻辑接口类

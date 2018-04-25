@@ -1,8 +1,8 @@
-package org.spring.springboot.service.impl;
+package edu.hfut.wangyu.service.impl;
 
-import org.spring.springboot.dao.CityDao;
-import org.spring.springboot.domain.City;
-import org.spring.springboot.service.CityService;
+import edu.hfut.wangyu.service.CityService;
+import edu.hfut.wangyu.domain.CityDao;
+import edu.hfut.wangyu.dal.City;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

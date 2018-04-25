@@ -1,13 +1,15 @@
-package org.spring.springboot.dao;
+package edu.hfut.wangyu.domain;
 
 import org.apache.ibatis.annotations.Param;
-import org.spring.springboot.domain.City;
+import edu.hfut.wangyu.dal.City;
+import org.springframework.stereotype.Component;
 
 /**
  * 城市 DAO 接口类
  *
  * Created by bysocket on 07/02/2017.
  */
+@Component
 public interface CityDao {
 
     /**
@@ -16,4 +18,5 @@ public interface CityDao {
      * @param cityName 城市名
      */
     City findByName(@Param("cityName") String cityName);
+
 }

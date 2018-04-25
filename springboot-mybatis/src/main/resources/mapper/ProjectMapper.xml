@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="edu.hfut.wangyu.domain.ProjectMapper">
+    <resultMap id="projectMap" type="edu.hfut.wangyu.dal.Project" >
+        <result column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="department_code" property="departmentCode" />
+    </resultMap>
+
+    <insert id="insertProject" parameterType="edu.hfut.wangyu.dal.Project">
+        insert
+        into project (name,department_code,created)
+        value (#{project.name},#{project.departmentCode},#{project.created})
+    </insert>
+
+    <update id="updateProject" parameterType="edu.hfut.wangyu.dal.Project">
+        update user
+        <set>
+            <if test="name != null">name=#{project.name},</if>
+            <if test="departmentCode != null">department_code=#{project.departmentCode},</if>
+        </set>
+        where id = #{project.id}
+    </update>
+
+    <select id="selectList"  resultMap="projectMap">
+        select *
+        from project
+        where flag = 1
+    </select>
+
+    <update id="deleteProject" parameterType="edu.hfut.wangyu.dal.Project">
+        update user
+        set flag = 0
+        where id = #{project.id}
+    </update>
+
+</mapper>
